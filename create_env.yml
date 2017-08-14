@@ -5,6 +5,9 @@
     - name: Ensure configured taps are tapped.
       homebrew_tap: "tap={{ item }} state=present"
       with_items: "{{ homebrew_taps }}"
+      tags:
+        - apps
+        - cask
 
     - name: Ensure configured homebrew packages are installed.
       homebrew:
@@ -12,6 +15,9 @@
         install_options: "{{ item.install_options | default(omit) }}"
         state: present
       with_items: "{{ homebrew_mandatory_packages + homebrew_installed_packages }}"
+      tags:
+        - apps
+        - brew
 
     - name: Install configured cask applications.
       homebrew_cask:
@@ -19,27 +25,42 @@
         state: present
         install_options: "appdir={{ homebrew_cask_appdir }}"
       with_items: "{{ homebrew_cask_apps }}"
+      tags:
+        - apps
+        - cask
 
     - name: List installed MAS apps.
       command: mas list
       register: mas_list
       check_mode: no
       changed_when: false
+      tags:
+        - apps
+        - mas
 
     - name: Ensure configured MAS apps are installed.
       command: mas install "{{ item.id|default(item) }}"
       with_items: "{{ mas_installed_apps }}"
       when: "'{{ item.id|default(item) }}' not in mas_list.stdout"
+      tags:
+        - apps
+        - mas
 
     - name: Remove selected from Dock
       shell: dockutil --remove '{{ item }}'
       ignore_errors: true
       with_items: "{{ dockitems_to_remove }}"
+      tags:
+        - dock
 
     - name: Check if items in dock exist
       shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}' --label '{{ item.name }}'
       with_items: "{{ dockitems_to_persist }}"
+      tags:
+       - dock
 
     - name: Fix order
       shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
       with_items: "{{ dockitems_to_persist }}"
+      tags:
+       - dock

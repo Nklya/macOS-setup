@@ -19,4 +19,8 @@ fi
 brew install ansible
 
 # Run ansible
-ansible-playbook -i "localhost," -c local create_env.yml --extra-vars "@env_vars.yml"
+if [ -z $1 ]; then
+	ansible-playbook -i "localhost," -c local create_env.yml --extra-vars "@env_vars.yml"
+else
+	ansible-playbook -i "localhost," -c local create_env.yml --extra-vars "@env_vars.yml" --tags $1
+fi

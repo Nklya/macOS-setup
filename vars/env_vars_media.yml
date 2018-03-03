@@ -1,45 +1,30 @@
 ---
 homebrew_taps:
   - caskroom/cask
-  - wata727/tflint
 
 homebrew_mandatory_packages:
   - dockutil
   - mas
 
 homebrew_installed_packages:
-  - ansible
-  - ansible-lint
-  - awscli
   - go
   - htop
-  - ipcalc
   - jq
   - mc
-  - screen
-  - shfmt
-  - sysdig
-  - terraform
-  - tflint
-  - tmux
   - wget
   - zsh-syntax-highlighting
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chefdk
   - coconutbattery
-  - docker
+  - docker-toolbox
   - gitup
   - google-chrome
-  - google-cloud-sdk
   - iterm2
-  - java
   - psequel
   - sequel-pro
   - skype
   - spectacle
-  - vagrant
   - virtualbox
   - visual-studio-code
   - vlc

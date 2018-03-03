@@ -56,13 +56,12 @@ mas_installed_apps:
   - { id: 409183694, name: "Keynote" }
 
 dockitems_to_remove:
-  - Maps
-  - Siri
-  - Contacts
-  - Downloads
-  - Reminders
-  - Messages
-  - Photos
+  - Карты
+  - Контакты
+  - Загрузки
+  - Напоминания
+  - Сообщения
+  - Фото
   - App Store
   - FaceTime
   - iBooks
@@ -73,16 +72,16 @@ dockitems_to_persist:
   - name: Safari
     path: /Applications/Safari.app
     pos: 1
-  - name: Mail
+  - name: Почта
     path: /Applications/Mail.app
     pos: 2
-  - name: Calendar
+  - name: Календарь
     path: /Applications/Calendar.app
     pos: 3
-  - name: Notes
+  - name: Заметки
     path: /Applications/Notes.app
     pos: 4
-  - name: System Preferences
+  - name: Системные настройки
     path: /Applications/System Preferences.app
     pos: 5
   - name: iTerm2

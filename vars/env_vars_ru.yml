@@ -9,7 +9,6 @@ homebrew_mandatory_packages:
 
 homebrew_installed_packages:
   - ansible
-  - ansible-lint
   - awscli
   - go
   - htop

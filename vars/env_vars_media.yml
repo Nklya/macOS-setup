@@ -11,7 +11,12 @@ homebrew_installed_packages:
   - htop
   - jq
   - mc
+  - pyenv
+  - rubyenv
+  - terraform
   - wget
+  - youtube-dl
+  - zsh-autosuggestions
   - zsh-syntax-highlighting
 
 homebrew_cask_appdir: /Applications
@@ -19,12 +24,15 @@ homebrew_cask_apps:
   - coconutbattery
   - docker-toolbox
   - gitup
+  - gfxcardstatus
   - google-chrome
+  - icq
   - iterm2
   - psequel
   - sequel-pro
   - skype
   - spectacle
+  - transmission
   - virtualbox
   - visual-studio-code
   - vlc
@@ -36,6 +44,7 @@ mas_installed_apps:
   - { id: 747648890, name: "Telegram" }
   - { id: 803453959, name: "Slack" }
   - { id: 928871589, name: "Noizio" }
+  - { id: 961632517, name: "Be Focused Pro"}
   - { id: 409201541, name: "Pages" }
   - { id: 409203825, name: "Numbers" }
   - { id: 409183694, name: "Keynote" }
@@ -79,8 +88,8 @@ dockitems_to_persist:
   - name: Telegram
     path: /Applications/Telegram.app
     pos: 8
-  - name: Slack
-    path: /Applications/Slack.app
+  - name: ICQ
+    path: /Applications/ICQ.app
     pos: 9
   - name: Skype
     path: /Applications/Skype.app

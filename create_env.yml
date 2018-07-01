@@ -2,9 +2,11 @@
 - hosts: localhost
 
   tasks:
+  # Work with Apps
     - name: Ensure configured taps are tapped.
       homebrew_tap: "tap={{ item }} state=present"
       with_items: "{{ homebrew_taps }}"
+      when: homebrew_taps is defined
       tags:
         - apps
         - cask
@@ -15,6 +17,7 @@
         install_options: "{{ item.install_options | default(omit) }}"
         state: present
       with_items: "{{ homebrew_mandatory_packages + homebrew_installed_packages }}"
+      when: homebrew_mandatory_packages is defined or homebrew_installed_packages is defined
       tags:
         - apps
         - brew
@@ -25,6 +28,7 @@
         state: present
         install_options: "appdir={{ homebrew_cask_appdir }}"
       with_items: "{{ homebrew_cask_apps }}"
+      when: homebrew_cask_apps is defined
       tags:
         - apps
         - cask
@@ -46,6 +50,17 @@
         - apps
         - mas
 
+    - name: Install configured pip applications.
+      pip:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ pip_apps }}"
+      when: pip_apps is defined
+      tags:
+        - apps
+        - pip
+
+  # Work with Dock
     - name: Remove selected from Dock
       shell: dockutil --remove '{{ item }}'
       ignore_errors: true

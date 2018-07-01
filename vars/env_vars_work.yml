@@ -1,0 +1,113 @@
+---
+# Uncomment lines below to enable some tap
+# homebrew_taps:
+#   - some_tap
+
+homebrew_mandatory_packages:
+  - dockutil
+  - mas
+
+homebrew_installed_packages:
+  - awscli
+  - go
+  - htop
+  - ipcalc
+  - jq
+  - mc
+  - screen
+  - tmux
+  - task
+  - tasksh
+  - taskd
+  - shfmt
+  - sysdig
+  - terraform
+  - pyenv
+  - rbenv
+  - wget
+  - zsh-syntax-highlighting
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - coconutbattery
+  - docker
+  - gitup
+  - google-chrome
+  - google-cloud-sdk
+  - google-drive-file-stream
+  - iterm2
+  - java
+  - psequel
+  - sequel-pro
+  - skype
+  - spectacle
+  - vagrant
+  - virtualbox
+  - visual-studio-code
+  - vlc
+  - wireshark
+
+mas_installed_apps:
+  - { id: 1014850245, name: "Monit" }
+  - { id: 715768417, name: "Microsoft Remote Desktop" }
+  - { id: 747648890, name: "Telegram" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 928871589, name: "Noizio" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 961632517, name: "Be Focused Pro" }
+  - { id: 989175722, name: "Simple Recorder" }
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 1176895641, name: "Spark e-mail" }
+
+pip_apps:
+  - trytravis
+  - ansible-lint
+
+dockitems_to_remove:
+  - Maps
+  - Siri
+  - Contacts
+  - Downloads
+  - Reminders
+  - Messages
+  - Photos
+  - App Store
+  - FaceTime
+  - iBooks
+  - iTunes
+  - Launchpad
+  - System Preferences
+
+dockitems_to_persist:
+  - name: Safari
+    path: /Applications/Safari.app
+    pos: 1
+  - name: Chrome
+    path: /Applications/Google Chrome.app
+    pos: 2
+  - name: Mail
+    path: /Applications/Mail.app
+    pos: 3
+  - name: Calendar
+    path: /Applications/Calendar.app
+    pos: 4
+  - name: Notes
+    path: /Applications/Notes.app
+    pos: 5
+  - name: iTerm2
+    path: /Applications/iTerm.app
+    pos: 6
+  - name: Visual Studio Code
+    path: /Applications/Visual Studio Code.app
+    pos: 7
+  - name: Telegram
+    path: /Applications/Telegram.app
+    pos: 8
+  - name: Slack
+    path: /Applications/Slack.app
+    pos: 9
+  - name: Skype
+    path: /Applications/Skype.app
+    pos: 10

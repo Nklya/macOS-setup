@@ -1,7 +1,7 @@
 ---
-homebrew_taps:
-  - caskroom/cask
-  - wata727/tflint
+# Uncomment lines below to enable some tap
+# homebrew_taps:
+#   - some_tap
 
 homebrew_mandatory_packages:
   - dockutil

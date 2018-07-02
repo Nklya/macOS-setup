@@ -14,16 +14,17 @@ homebrew_installed_packages:
   - ipcalc
   - jq
   - mc
-  - screen
-  - tmux
-  - task
-  - tasksh
-  - taskd
-  - shfmt
-  - sysdig
-  - terraform
+  - mercurial
   - pyenv
   - rbenv
+  - screen
+  - shfmt
+  - sysdig
+  - task
+  - taskd
+  - tasksh
+  - terraform
+  - tmux
   - wget
   - zsh-syntax-highlighting
 
@@ -37,10 +38,13 @@ homebrew_cask_apps:
   - google-drive-file-stream
   - iterm2
   - java
+  - keybase
+  - opera
   - psequel
   - sequel-pro
   - skype
   - spectacle
+  - tunnelblick
   - vagrant
   - virtualbox
   - visual-studio-code

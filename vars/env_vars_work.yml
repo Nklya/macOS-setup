@@ -25,12 +25,14 @@ homebrew_installed_packages:
   - taskd
   - tasksh
   - terraform
+  - tig
   - tmux
   - wget
   - zsh-syntax-highlighting
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - alfred
   - coconutbattery
   - docker
   - encryptme

@@ -20,19 +20,21 @@ if ! hash brew 2>/dev/null; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Install ansible
-if [ "$ANSIBLE_TYPE" = "brew" ]; then
-	brew install ansible
-elif [ "$ANSIBLE_TYPE" = "pyenv" ]; then
-	PYENV_VER=2.7.15
-	brew install pyenv
-	[ -d ~/.pyenv/versions/$PYENV_VER ] || pyenv install $PYENV_VER
-	pyenv global $PYENV_VER
-	eval "$(pyenv init -)"
-	pip install ansible
-else
-	echo "Unsupported ansible install option '$ANSIBLE_TYPE'"
-	exit 1
+if ! hash ansible 2>/dev/null; then
+	# Install ansible
+	if [ "$ANSIBLE_TYPE" = "brew" ]; then
+		brew install ansible
+	elif [ "$ANSIBLE_TYPE" = "pyenv" ]; then
+		PYENV_VER=2.7.15
+		brew install pyenv
+		[ -d ~/.pyenv/versions/$PYENV_VER ] || pyenv install $PYENV_VER
+		pyenv global $PYENV_VER
+		eval "$(pyenv init -)"
+		pip install ansible
+	else
+		echo "Unsupported ansible install option '$ANSIBLE_TYPE'"
+		exit 1
+	fi
 fi
 
 # Run ansible

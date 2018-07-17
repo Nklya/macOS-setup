@@ -1,7 +1,7 @@
 ---
 # Uncomment lines below to enable some tap
-# homebrew_taps:
-#   - some_tap
+homebrew_taps:
+  - homebrew/cask-drivers
 
 homebrew_mandatory_packages:
   - dockutil
@@ -36,6 +36,7 @@ homebrew_cask_apps:
   - coconutbattery
   - docker
   - encryptme
+  # - fork
   - gitup
   - google-chrome
   - google-cloud-sdk
@@ -54,6 +55,8 @@ homebrew_cask_apps:
   - visual-studio-code
   - vlc
   - wireshark
+  - yubico-yubikey-personalization-gui
+  - yubico-yubikey-piv-manager
   - zoomus
 
 mas_installed_apps:

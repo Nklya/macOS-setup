@@ -1,4 +1,4 @@
-# Simple and clean ansible playbook to install all needed software to new macOS environment
+# Simple ansible playbook to install all software that you need to new macOS environment
 
 Based on Jeff Geerling's [work](https://github.com/geerlingguy/mac-dev-playbook)
 

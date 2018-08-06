@@ -12,6 +12,7 @@ homebrew_installed_packages:
   - go
   - htop
   - ipcalc
+  - livestreamer
   - jq
   - mc
   - mercurial
@@ -25,6 +26,7 @@ homebrew_installed_packages:
   - taskd
   - tasksh
   - terraform
+  - tree
   - tig
   - tmux
   - wget
@@ -50,6 +52,7 @@ homebrew_cask_apps:
   - skype
   - spectacle
   - tunnelblick
+  - typora
   - vagrant
   - virtualbox
   - visual-studio-code

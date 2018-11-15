@@ -6,6 +6,7 @@
 # $2 - file with variables to apply, default - $VARS_FILE
 # $3 - ansible install type default - brew or pyenv
 
+TAGS=${1:-all}
 VARS_FILE=${2:-env_vars.yml}
 ANSIBLE_TYPE=${3:-brew}
 
@@ -25,6 +26,10 @@ if ! hash ansible 2>/dev/null; then
 	if [ "$ANSIBLE_TYPE" = "brew" ]; then
 		brew install ansible
 	elif [ "$ANSIBLE_TYPE" = "pyenv" ]; then
+		# Workaround for Mojave https://github.com/pyenv/pyenv/wiki/common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib
+		if [[ $(sw_vers -productVersion) == 10.14* ]]; then
+			sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+		fi
 		PYENV_VER=2.7.15
 		brew install pyenv
 		[ -d ~/.pyenv/versions/$PYENV_VER ] || pyenv install $PYENV_VER
@@ -38,11 +43,7 @@ if ! hash ansible 2>/dev/null; then
 fi
 
 # Run ansible
-if [ -z $1 ]; then
-	ansible-playbook -i "localhost," -c local create_env.yml --extra-vars "@$VARS_FILE"
-else
-	ansible-playbook -i "localhost," -c local create_env.yml --extra-vars "@$VARS_FILE" --tags $1
-fi
+ansible-playbook -i "localhost," -c local create_env.yml --extra-vars "@$VARS_FILE" --tags $TAGS
 
 # Set shell to ZSH
 if [ ! -f ~/.zshrc ]; then

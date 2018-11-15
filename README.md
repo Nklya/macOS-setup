@@ -4,6 +4,8 @@ Based on Jeff Geerling's [work](https://github.com/geerlingguy/mac-dev-playbook)
 
 [In Russian](README_ru.md)
 
+NOTE: Managing Dock items in macOS Mojave is VERY strange (it's practically not work)!
+
 ## HOWTO
 
 * Customize your settings in env_vars.yml (brew apps, cask apps, mas apps, dock items)

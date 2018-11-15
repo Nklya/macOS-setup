@@ -1,0 +1,126 @@
+---
+# Uncomment lines below to enable some tap
+homebrew_taps:
+  - homebrew/cask-drivers
+  - chef/chef
+
+homebrew_mandatory_packages:
+  - dockutil
+  - mas
+
+homebrew_installed_packages:
+  - awscli
+  - go
+  - htop
+  - ipcalc
+  - livestreamer
+  - jq
+  - mc
+  - packer
+  - pyenv
+  - rbenv
+  - screen
+  - shfmt
+  - smartmontools
+  - sysdig
+  - terraform
+  - tree
+  - tig
+  - tmux
+  - watch
+  - wget
+  - zsh-syntax-highlighting
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chefdk
+  - coconutbattery
+  - docker-toolbox
+  - etcher
+  - fork
+  - gitup
+  - google-chrome
+  - gfxcardstatus
+  - google-cloud-sdk
+  - google-drive-file-stream
+  - iterm2
+  - java
+  - keybase
+  - psequel
+  - sequel-pro
+  - skype
+  - spectacle
+  - sublime-merge
+  - teamviewer
+  - tunnelblick
+  - typora
+  - vagrant
+  - virtualbox
+  - visual-studio-code
+  - vlc
+  - wireshark
+  - yubico-yubikey-personalization-gui
+  - yubico-yubikey-piv-manager
+  - yubico-authenticator
+  - zoomus
+
+mas_installed_apps:
+  - { id: 1014850245, name: "Monit" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop" }
+  - { id: 747648890, name: "Telegram" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 928871589, name: "Noizio" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 1286489308, name: "FlatTomato" }
+  - { id: 603117688, name: "CCMenu" }
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 1176895641, name: "Spark e-mail" }
+
+pip_apps:
+  - trytravis
+  - ansible-lint
+
+dockitems_to_remove:
+  - Maps
+  - Mail
+  - Siri
+  - Contacts
+  - Downloads
+  - Reminders
+  - Messages
+  - Photos
+  - App Store
+  - FaceTime
+  - Launchpad
+  - System Preferences
+
+dockitems_to_persist:
+  - name: Safari
+    path: /Applications/Safari.app
+    pos: 1
+  - name: Chrome
+    path: /Applications/Google Chrome.app
+    pos: 2
+  - name: Spark
+    path: /Applications/Spark.app
+    pos: 3
+  - name: Calendar
+    path: /Applications/Calendar.app
+    pos: 4
+  - name: Notes
+    path: /Applications/Notes.app
+    pos: 5
+  - name: iTerm2
+    path: /Applications/iTerm.app
+    pos: 6
+  - name: Visual Studio Code
+    path: /Applications/Visual Studio Code.app
+    pos: 7
+  - name: Telegram
+    path: /Applications/Telegram.app
+    pos: 8
+  - name: Slack
+    path: /Applications/Slack.app
+    pos: 9

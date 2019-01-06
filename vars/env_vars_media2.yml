@@ -1,8 +1,9 @@
 ---
-# Uncomment lines below to enable some tap
+# Uncomment lines below to add custom taps
 homebrew_taps:
   - homebrew/cask-drivers
-  - chef/chef
+  - homebrew/cask-fonts
+  # - chef/chef # Not supported on 10.11 anymore
 
 homebrew_mandatory_packages:
   - dockutil
@@ -13,37 +14,36 @@ homebrew_installed_packages:
   - go
   - htop
   - ipcalc
-  - livestreamer
   - jq
+  - livestreamer
   - mc
   - packer
   - pyenv
   - rbenv
-  - screen
   - shfmt
   - smartmontools
   - sysdig
   - terraform
-  - tree
   - tig
   - tmux
+  - tree
   - watch
   - wget
   - zsh-syntax-highlighting
-
+  
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chefdk
+  # - chefdk
   - coconutbattery
+  - balenaetcher
   - docker-toolbox
-  - etcher
-  - fork
-  - gitup
-  - google-chrome
+  - font-hack
+  - font-hasklig # Cool font with ligatures based on Source Code Pro
   - gfxcardstatus
+  - google-chrome
   - google-cloud-sdk
   - google-drive-file-stream
-  - iterm2
+  # - iterm2
   - java
   - keybase
   - psequel
@@ -59,9 +59,6 @@ homebrew_cask_apps:
   - visual-studio-code
   - vlc
   - wireshark
-  - yubico-yubikey-personalization-gui
-  - yubico-yubikey-piv-manager
-  - yubico-authenticator
   - zoomus
 
 mas_installed_apps:
@@ -73,28 +70,22 @@ mas_installed_apps:
   - { id: 409201541, name: "Pages" }
   - { id: 409203825, name: "Numbers" }
   - { id: 409183694, name: "Keynote" }
-  - { id: 1286489308, name: "FlatTomato" }
+  # - { id: 1286489308, name: "FlatTomato" }
+  - { id: 961632517, name: "Be Focused Pro"}
   - { id: 603117688, name: "CCMenu" }
   - { id: 425424353, name: "The Unarchiver" }
   - { id: 1176895641, name: "Spark e-mail" }
+  - { id: 425264550, name: "Blackmagic Disk Speed Test" }
+  - { id: 1153157709, name: "Speedtest" }
+  - { id: 1370791134, name: "DigiDoc4" }
+  - { id: 1243347809, name: "TeRa" }
 
 pip_apps:
   - trytravis
   - ansible-lint
 
 dockitems_to_remove:
-  - Maps
-  - Mail
-  - Siri
-  - Contacts
-  - Downloads
-  - Reminders
-  - Messages
-  - Photos
-  - App Store
-  - FaceTime
-  - Launchpad
-  - System Preferences
+  - All
 
 dockitems_to_persist:
   - name: Safari
@@ -121,6 +112,3 @@ dockitems_to_persist:
   - name: Telegram
     path: /Applications/Telegram.app
     pos: 8
-  - name: Slack
-    path: /Applications/Slack.app
-    pos: 9

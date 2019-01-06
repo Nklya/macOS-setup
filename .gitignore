@@ -1,2 +1,3 @@
 .DS_Store
 *.retry
+vars/*private*.yml

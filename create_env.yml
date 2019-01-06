@@ -9,14 +9,22 @@
       when: homebrew_taps is defined
       tags:
         - apps
+        - brew
         - cask
+
+    - name: Override mas-cli for macOS < 10.13.
+      shell: brew tap mas-cli/tap && brew install mas-cli/tap/mas
+      changed_when: false
+      when: ansible_distribution_version is version_compare('10.13', '<')
+      tags:
+        - apps
+        - mas
+        - brew
 
     - name: Ensure configured homebrew packages are installed.
       homebrew:
-        name: "{{ item.name | default(item) }}"
-        install_options: "{{ item.install_options | default(omit) }}"
+        name: "{{ homebrew_mandatory_packages + homebrew_installed_packages }}"
         state: present
-      with_items: "{{ homebrew_mandatory_packages + homebrew_installed_packages }}"
       when: homebrew_mandatory_packages is defined or homebrew_installed_packages is defined
       tags:
         - apps
@@ -52,9 +60,8 @@
 
     - name: Install configured pip applications.
       pip:
-        name: "{{ item }}"
+        name: "{{ pip_apps }}"
         state: present
-      with_items: "{{ pip_apps }}"
       when: pip_apps is defined
       tags:
         - apps
@@ -65,6 +72,14 @@
       shell: dockutil --remove '{{ item }}'
       ignore_errors: true
       with_items: "{{ dockitems_to_remove }}"
+      when: "'All' not in dockitems_to_remove"
+      tags:
+        - dock
+
+    - name: Remove ALL from Dock if enabled
+      shell: dockutil --remove all
+      ignore_errors: true
+      when: "'All' in dockitems_to_remove"
       tags:
         - dock
 

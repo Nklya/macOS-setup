@@ -30,7 +30,7 @@ homebrew_installed_packages:
   - watch
   - wget
   - zsh-syntax-highlighting
-  
+
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # - chefdk

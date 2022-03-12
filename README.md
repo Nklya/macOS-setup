@@ -2,9 +2,7 @@
 
 Based on Jeff Geerling's [work](https://github.com/geerlingguy/mac-dev-playbook)
 
-[In Russian](README_ru.md)
-
-NOTE: Managing Dock items in macOS Mojave is VERY strange (it's practically not work)!
+NOTE: Managing Dock items in macOS Mojave is VERY strange (it's practically do not work)!
 
 ## HOWTO
 

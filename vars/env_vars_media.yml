@@ -28,7 +28,6 @@ homebrew_cask_apps:
   - gitup
   - gfxcardstatus
   - google-chrome
-  - icq
   - iterm2
   - psequel
   - sequel-pro
@@ -91,9 +90,6 @@ dockitems_to_persist:
   - name: Telegram
     path: /Applications/Telegram.app
     pos: 8
-  - name: ICQ
-    path: /Applications/ICQ.app
-    pos: 9
   - name: Skype
     path: /Applications/Skype.app
-    pos: 10
+    pos: 9
